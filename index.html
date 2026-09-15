@@ -287,16 +287,142 @@
     font-size: 0.98rem;
   }
 
-  @media (max-width: 620px){
-    .tl-row, .tl-row:nth-child(even){
-      grid-template-columns: 56px 1fr;
-    }
-    .tl-content, .tl-row:nth-child(even) .tl-content{
-      grid-template-columns: 1fr;
-      order: 0 !important;
-    }
-    .tl-content img{ height: 220px; }
+  ```css
+/* ---------- MOBILE RESPONSIVE FIX ---------- */
+@media (max-width: 620px){
+
+  /* Journey section */
+  .journey {
+    padding: 3.5rem 1rem 4.5rem;
+    overflow-x: hidden;
   }
+
+  .journey-head {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .journey-head h2 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .journey-head p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Timeline */
+  .timeline {
+    width: 100%;
+    max-width: 100%;
+    gap: 2rem;
+  }
+
+  .tl-row,
+  .tl-row:nth-child(even) {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: start;
+  }
+
+  /* Marker */
+  .tl-marker,
+  .tl-row:nth-child(even) .tl-marker {
+    order: 0;
+    min-width: 0;
+  }
+
+  .tl-marker .yr {
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .tl-marker .dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Content card */
+  .tl-content,
+  .tl-row:nth-child(even) .tl-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.9rem;
+    order: 0 !important;
+  }
+
+  /* Image */
+  .tl-content img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  /* Text */
+  .tl-caption {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .tl-caption h3 {
+    font-size: 1.3rem;
+    line-height: 1.25;
+    overflow-wrap: break-word;
+  }
+
+  .tl-caption p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+  }
+
+  .tl-caption .tag {
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 380px){
+
+  .journey {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .tl-row,
+  .tl-row:nth-child(even) {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 0.5rem;
+  }
+
+  .tl-content {
+    padding: 0.7rem;
+  }
+
+  .journey-head h2 {
+    font-size: 1.6rem;
+  }
+
+  .tl-caption h3 {
+    font-size: 1.15rem;
+  }
+}
+```
+
 
   /* ---------- WISHES ---------- */
   .wishes{
